@@ -1,0 +1,296 @@
+<svg width="100%" viewBox="0 0 1400 1100" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>Diagramme de classes — Turtle Graphics</title>
+  <desc>Diagramme UML représentant les classes Instruction, Avancer, Tourner, Repete, Consigne, SvgDrawer, Turtle, Point, MenuOption, Menu et MenuAction</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="inherit" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+      <path d="M1 1L10 6L1 11Z" fill="white" stroke="#5F5E5A" stroke-width="1.2"/>
+    </marker>
+    <marker id="inherit-end" viewBox="0 0 12 12" refX="1" refY="6" markerWidth="10" markerHeight="10" orient="auto">
+      <path d="M11 1L1 6L11 11Z" fill="white" stroke="#5F5E5A" stroke-width="1.2"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="1100" fill="#FAFAF8"/>
+
+  <!-- Title -->
+  <text x="700" y="32" text-anchor="middle" font-family="Georgia, serif" font-size="17" font-weight="600" fill="#2C2C2A">Diagramme de classes — Turtle Graphics System</text>
+
+  <!-- ===== CLASS: Instruction (abstract, top center) ===== -->
+  <g id="Instruction">
+    <!-- Header -->
+    <rect x="520" y="50" width="240" height="36" rx="6" ry="0" fill="#CECBF6" stroke="#7F77DD" stroke-width="1"/>
+    <text x="640" y="73" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-style="italic" font-weight="700" fill="#26215C">«abstract» Instruction</text>
+    <!-- Attributes -->
+    <rect x="520" y="86" width="240" height="38" fill="#EEEDFE" stroke="#7F77DD" stroke-width="1"/>
+    <text x="530" y="101" font-family="monospace" font-size="11" fill="#3C3489">- command_ : string</text>
+    <text x="530" y="117" font-family="monospace" font-size="11" fill="#3C3489">- valeur_ : double</text>
+    <!-- Methods -->
+    <rect x="520" y="124" width="240" height="112" fill="#F5F4FE" stroke="#7F77DD" stroke-width="1"/>
+    <text x="530" y="139" font-family="monospace" font-size="11" fill="#3C3489">+ Instruction(string, double)</text>
+    <text x="530" y="154" font-family="monospace" font-size="11" fill="#3C3489">+ command() : string</text>
+    <text x="530" y="169" font-family="monospace" font-size="11" fill="#3C3489">+ valeur() : double</text>
+    <text x="530" y="184" font-family="monospace" font-size="11" fill="#3C3489">+ print() : void</text>
+    <text x="530" y="199" font-family="monospace" font-size="11" font-style="italic" fill="#7F77DD">«abstract» execute(SvgDrawer*)</text>
+    <text x="530" y="214" font-family="monospace" font-size="11" font-style="italic" fill="#7F77DD">«abstract» print()</text>
+    <rect x="520" y="50" width="240" height="186" rx="6" fill="none" stroke="#7F77DD" stroke-width="1.5"/>
+  </g>
+
+  <!-- ===== CLASS: Avancer ===== -->
+  <g id="Avancer">
+    <rect x="180" y="320" width="230" height="36" rx="6" ry="0" fill="#9FE1CB" stroke="#0F6E56" stroke-width="1"/>
+    <text x="295" y="343" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#04342C">Avancer</text>
+    <rect x="180" y="356" width="230" height="22" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+    <text x="190" y="371" font-family="monospace" font-size="11" fill="#085041">- valeur_ : double</text>
+    <rect x="180" y="378" width="230" height="130" fill="#F0FBF7" stroke="#0F6E56" stroke-width="1"/>
+    <text x="190" y="393" font-family="monospace" font-size="11" fill="#085041">+ Avancer(double)</text>
+    <text x="190" y="408" font-family="monospace" font-size="11" fill="#085041">+ valeur() : double</text>
+    <text x="190" y="423" font-family="monospace" font-size="11" fill="#085041">+ setValeur(double) : void</text>
+    <text x="190" y="438" font-family="monospace" font-size="11" fill="#085041">+ x_arrive(SvgDrawer*) : double</text>
+    <text x="190" y="453" font-family="monospace" font-size="11" fill="#085041">+ y_arrive(SvgDrawer*) : double</text>
+    <text x="190" y="468" font-family="monospace" font-size="11" fill="#085041">+ execute(SvgDrawer*) : void</text>
+    <text x="190" y="483" font-family="monospace" font-size="11" fill="#085041">+ print() : void</text>
+    <rect x="180" y="320" width="230" height="188" rx="6" fill="none" stroke="#0F6E56" stroke-width="1.5"/>
+  </g>
+
+  <!-- ===== CLASS: Tourner ===== -->
+  <g id="Tourner">
+    <rect x="525" y="320" width="230" height="36" rx="6" ry="0" fill="#9FE1CB" stroke="#0F6E56" stroke-width="1"/>
+    <text x="640" y="343" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#04342C">Tourner</text>
+    <rect x="525" y="356" width="230" height="22" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+    <text x="535" y="371" font-family="monospace" font-size="11" fill="#085041">- valeur_ : double</text>
+    <rect x="525" y="378" width="230" height="100" fill="#F0FBF7" stroke="#0F6E56" stroke-width="1"/>
+    <text x="535" y="393" font-family="monospace" font-size="11" fill="#085041">+ Tourner(double)</text>
+    <text x="535" y="408" font-family="monospace" font-size="11" fill="#085041">+ valeur() : double</text>
+    <text x="535" y="423" font-family="monospace" font-size="11" fill="#085041">+ setValeur(double) : void</text>
+    <text x="535" y="438" font-family="monospace" font-size="11" fill="#085041">+ execute(SvgDrawer*) : void</text>
+    <text x="535" y="453" font-family="monospace" font-size="11" fill="#085041">+ print() : void</text>
+    <rect x="525" y="320" width="230" height="158" rx="6" fill="none" stroke="#0F6E56" stroke-width="1.5"/>
+  </g>
+
+  <!-- ===== CLASS: Repete ===== -->
+  <g id="Repete">
+    <rect x="870" y="320" width="260" height="36" rx="6" ry="0" fill="#9FE1CB" stroke="#0F6E56" stroke-width="1"/>
+    <text x="1000" y="343" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#04342C">Repete</text>
+    <rect x="870" y="356" width="260" height="36" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+    <text x="880" y="371" font-family="monospace" font-size="11" fill="#085041">- valeur_ : double</text>
+    <text x="880" y="386" font-family="monospace" font-size="11" fill="#085041">- contenu_ : queue&lt;Instruction*&gt;</text>
+    <rect x="870" y="392" width="260" height="130" fill="#F0FBF7" stroke="#0F6E56" stroke-width="1"/>
+    <text x="880" y="407" font-family="monospace" font-size="11" fill="#085041">+ Repete(double, queue&lt;Instruction*&gt;)</text>
+    <text x="880" y="422" font-family="monospace" font-size="11" fill="#085041">+ valeur() : double</text>
+    <text x="880" y="437" font-family="monospace" font-size="11" fill="#085041">+ contenu() : queue&lt;Instruction*&gt;</text>
+    <text x="880" y="452" font-family="monospace" font-size="11" fill="#085041">+ setValeur(double) : void</text>
+    <text x="880" y="467" font-family="monospace" font-size="11" fill="#085041">+ setContenu(queue&lt;Instruction*&gt;)</text>
+    <text x="880" y="482" font-family="monospace" font-size="11" fill="#085041">+ execute(SvgDrawer*) : void</text>
+    <text x="880" y="497" font-family="monospace" font-size="11" fill="#085041">+ print() : void</text>
+    <rect x="870" y="320" width="260" height="202" rx="6" fill="none" stroke="#0F6E56" stroke-width="1.5"/>
+  </g>
+
+  <!-- ===== CLASS: SvgDrawer ===== -->
+  <g id="SvgDrawer">
+    <rect x="60" y="600" width="290" height="36" rx="6" ry="0" fill="#B5D4F4" stroke="#185FA5" stroke-width="1"/>
+    <text x="205" y="623" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#042C53">SvgDrawer</text>
+    <rect x="60" y="636" width="290" height="100" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+    <text x="70" y="651" font-family="monospace" font-size="11" fill="#0C447C">- htmlFile_ : string</text>
+    <text x="70" y="666" font-family="monospace" font-size="11" fill="#0C447C">- drawingWidth_ : int</text>
+    <text x="70" y="681" font-family="monospace" font-size="11" fill="#0C447C">- drawingHeight_ : int</text>
+    <text x="70" y="696" font-family="monospace" font-size="11" fill="#0C447C">- htmlStream_ : ofstream</text>
+    <text x="70" y="711" font-family="monospace" font-size="11" fill="#0C447C">- strokeColor_, fillColor_ : string</text>
+    <text x="70" y="726" font-family="monospace" font-size="11" fill="#0C447C">- strokeWidth_ : float  - stylo_ : Turtle*</text>
+    <rect x="60" y="736" width="290" height="190" fill="#EBF5FD" stroke="#185FA5" stroke-width="1"/>
+    <text x="70" y="751" font-family="monospace" font-size="11" fill="#0C447C">+ SvgDrawer(string, int, int)</text>
+    <text x="70" y="766" font-family="monospace" font-size="11" fill="#0C447C">+ setDrawingSize(int, int) : void</text>
+    <text x="70" y="781" font-family="monospace" font-size="11" fill="#0C447C">+ stylo() : Turtle*</text>
+    <text x="70" y="796" font-family="monospace" font-size="11" fill="#0C447C">+ strokeColor() : string</text>
+    <text x="70" y="811" font-family="monospace" font-size="11" fill="#0C447C">+ setStrokeColor(), setStrokeWidth()</text>
+    <text x="70" y="826" font-family="monospace" font-size="11" fill="#0C447C">+ fillColor() : string</text>
+    <text x="70" y="841" font-family="monospace" font-size="11" fill="#0C447C">+ setFillColor(string) : void</text>
+    <text x="70" y="856" font-family="monospace" font-size="11" fill="#0C447C">+ drawingWidth(), drawingHeight() : int</text>
+    <text x="70" y="871" font-family="monospace" font-size="11" fill="#0C447C">+ beginDraw(string), endDraw() : void</text>
+    <text x="70" y="886" font-family="monospace" font-size="11" fill="#0C447C">+ drawLine(double, double) : void</text>
+    <text x="70" y="901" font-family="monospace" font-size="11" fill="#0C447C">+ drawCircle(double, double, double)</text>
+    <rect x="60" y="600" width="290" height="326" rx="6" fill="none" stroke="#185FA5" stroke-width="1.5"/>
+  </g>
+
+  <!-- ===== CLASS: Turtle ===== -->
+  <g id="Turtle">
+    <rect x="390" y="600" width="240" height="36" rx="6" ry="0" fill="#FAC775" stroke="#854F0B" stroke-width="1"/>
+    <text x="510" y="623" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#412402">Turtle</text>
+    <rect x="390" y="636" width="240" height="82" fill="#FAEEDA" stroke="#854F0B" stroke-width="1"/>
+    <text x="400" y="651" font-family="monospace" font-size="11" fill="#633806">- position_ : Point</text>
+    <text x="400" y="666" font-family="monospace" font-size="11" fill="#633806">- direction_ : double</text>
+    <text x="400" y="681" font-family="monospace" font-size="11" fill="#633806">- color_ : string</text>
+    <text x="400" y="696" font-family="monospace" font-size="11" fill="#633806">- strokewidth_ : int</text>
+    <text x="400" y="711" font-family="monospace" font-size="11" fill="#633806">- state_ : bool</text>
+    <rect x="390" y="718" width="240" height="160" fill="#FEF6E8" stroke="#854F0B" stroke-width="1"/>
+    <text x="400" y="733" font-family="monospace" font-size="11" fill="#633806">+ Turtle(Point, double, string, int, bool)</text>
+    <text x="400" y="748" font-family="monospace" font-size="11" fill="#633806">+ position() : Point</text>
+    <text x="400" y="763" font-family="monospace" font-size="11" fill="#633806">+ direction() : double</text>
+    <text x="400" y="778" font-family="monospace" font-size="11" fill="#633806">+ print() : void</text>
+    <text x="400" y="793" font-family="monospace" font-size="11" fill="#633806">+ color() : string</text>
+    <text x="400" y="808" font-family="monospace" font-size="11" fill="#633806">+ strokewidth() : int  state() : bool</text>
+    <text x="400" y="823" font-family="monospace" font-size="11" fill="#633806">+ setPosition(Point) : void</text>
+    <text x="400" y="838" font-family="monospace" font-size="11" fill="#633806">+ setDirection(double) : void</text>
+    <text x="400" y="853" font-family="monospace" font-size="11" fill="#633806">+ setColor(string) : void</text>
+    <text x="400" y="868" font-family="monospace" font-size="11" fill="#633806">+ setStrokewidth(int), setState(bool)</text>
+    <rect x="390" y="600" width="240" height="278" rx="6" fill="none" stroke="#854F0B" stroke-width="1.5"/>
+  </g>
+
+  <!-- ===== CLASS: Point ===== -->
+  <g id="Point">
+    <rect x="390" y="920" width="240" height="36" rx="6" ry="0" fill="#FAC775" stroke="#854F0B" stroke-width="1"/>
+    <text x="510" y="943" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#412402">Point</text>
+    <rect x="390" y="956" width="240" height="36" fill="#FAEEDA" stroke="#854F0B" stroke-width="1"/>
+    <text x="400" y="971" font-family="monospace" font-size="11" fill="#633806">- x_ : double</text>
+    <text x="400" y="986" font-family="monospace" font-size="11" fill="#633806">- y_ : double</text>
+    <rect x="390" y="992" width="240" height="82" fill="#FEF6E8" stroke="#854F0B" stroke-width="1"/>
+    <text x="400" y="1007" font-family="monospace" font-size="11" fill="#633806">+ Point(double, double)</text>
+    <text x="400" y="1022" font-family="monospace" font-size="11" fill="#633806">+ x(), y() : double</text>
+    <text x="400" y="1037" font-family="monospace" font-size="11" fill="#633806">+ print() : void</text>
+    <text x="400" y="1052" font-family="monospace" font-size="11" fill="#633806">+ setX(double), setY(double) : void</text>
+    <rect x="390" y="920" width="240" height="154" rx="6" fill="none" stroke="#854F0B" stroke-width="1.5"/>
+  </g>
+
+  <!-- ===== CLASS: Consigne ===== -->
+  <g id="Consigne">
+    <rect x="660" y="600" width="250" height="36" rx="6" ry="0" fill="#F5C4B3" stroke="#993C1D" stroke-width="1"/>
+    <text x="785" y="623" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#4A1B0C">Consigne</text>
+    <rect x="660" y="636" width="250" height="36" fill="#FAECE7" stroke="#993C1D" stroke-width="1"/>
+    <text x="670" y="651" font-family="monospace" font-size="11" fill="#712B13">- liste_ : queue&lt;Instruction*&gt;</text>
+    <text x="670" y="666" font-family="monospace" font-size="11" fill="#712B13">- drawer_ : SvgDrawer*</text>
+    <rect x="660" y="672" width="250" height="130" fill="#FDF4F1" stroke="#993C1D" stroke-width="1"/>
+    <text x="670" y="687" font-family="monospace" font-size="11" fill="#712B13">+ Consigne(SvgDrawer*)</text>
+    <text x="670" y="702" font-family="monospace" font-size="11" fill="#712B13">+ push(Instruction*) : void</text>
+    <text x="670" y="717" font-family="monospace" font-size="11" fill="#712B13">+ pop() : Instruction*</text>
+    <text x="670" y="732" font-family="monospace" font-size="11" fill="#712B13">+ print() : void</text>
+    <text x="670" y="747" font-family="monospace" font-size="11" fill="#712B13">+ entre() : string</text>
+    <text x="670" y="762" font-family="monospace" font-size="11" fill="#712B13">+ lire_cons(string) : void</text>
+    <text x="670" y="777" font-family="monospace" font-size="11" fill="#712B13">+ execute() : void</text>
+    <text x="670" y="792" font-family="monospace" font-size="11" fill="#712B13">+ ~Consigne()</text>
+    <rect x="660" y="600" width="250" height="202" rx="6" fill="none" stroke="#993C1D" stroke-width="1.5"/>
+  </g>
+
+  <!-- ===== CLASS: MenuOption (abstract) ===== -->
+  <g id="MenuOption">
+    <rect x="960" y="50" width="240" height="36" rx="6" ry="0" fill="#CECBF6" stroke="#7F77DD" stroke-width="1"/>
+    <text x="1080" y="73" text-anchor="middle" font-family="Georgia, serif" font-size="12" font-style="italic" font-weight="700" fill="#26215C">«abstract» MenuOption</text>
+    <rect x="960" y="86" width="240" height="22" fill="#EEEDFE" stroke="#7F77DD" stroke-width="1"/>
+    <text x="970" y="101" font-family="monospace" font-size="11" fill="#3C3489">- text_ : string</text>
+    <rect x="960" y="108" width="240" height="100" fill="#F5F4FE" stroke="#7F77DD" stroke-width="1"/>
+    <text x="970" y="123" font-family="monospace" font-size="11" fill="#3C3489">+ MenuOption(string)</text>
+    <text x="970" y="138" font-family="monospace" font-size="11" fill="#3C3489">+ virtual ~MenuOption()</text>
+    <text x="970" y="153" font-family="monospace" font-size="11" fill="#3C3489">+ text() : string</text>
+    <text x="970" y="168" font-family="monospace" font-size="11" fill="#3C3489">+ isValid(), isMenu() : bool</text>
+    <text x="970" y="183" font-family="monospace" font-size="11" font-style="italic" fill="#7F77DD">«abstract» execute(Menu*, int)</text>
+    <rect x="960" y="50" width="240" height="158" rx="6" fill="none" stroke="#7F77DD" stroke-width="1.5"/>
+  </g>
+
+  <!-- ===== CLASS: Menu ===== -->
+  <g id="Menu">
+    <rect x="940" y="600" width="260" height="36" rx="6" ry="0" fill="#ED93B1" stroke="#993556" stroke-width="1"/>
+    <text x="1070" y="623" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#4B1528">Menu</text>
+    <rect x="940" y="636" width="260" height="64" fill="#FBEAF0" stroke="#993556" stroke-width="1"/>
+    <text x="950" y="651" font-family="monospace" font-size="11" fill="#72243E">- prompt_ : string</text>
+    <text x="950" y="666" font-family="monospace" font-size="11" fill="#72243E">- errorMessage_ : string</text>
+    <text x="950" y="681" font-family="monospace" font-size="11" fill="#72243E">- options_ : list&lt;MenuOption*&gt;</text>
+    <text x="950" y="696" font-family="monospace" font-size="11" fill="#72243E">+ drawer_ : SvgDrawer*</text>
+    <rect x="940" y="700" width="260" height="160" fill="#FDF3F7" stroke="#993556" stroke-width="1"/>
+    <text x="950" y="715" font-family="monospace" font-size="11" fill="#72243E">+ Menu(string, string, string)</text>
+    <text x="950" y="730" font-family="monospace" font-size="11" fill="#72243E">+ ~Menu()</text>
+    <text x="950" y="745" font-family="monospace" font-size="11" fill="#72243E">+ isValid(), isMenu() : bool</text>
+    <text x="950" y="760" font-family="monospace" font-size="11" fill="#72243E">+ addOption(MenuOption*) : void</text>
+    <text x="950" y="775" font-family="monospace" font-size="11" fill="#72243E">+ print() : void</text>
+    <text x="950" y="790" font-family="monospace" font-size="11" fill="#72243E">+ findOption(int) : MenuOption*</text>
+    <text x="950" y="805" font-family="monospace" font-size="11" fill="#72243E">+ promptUser(int&amp;) : MenuOption*</text>
+    <text x="950" y="820" font-family="monospace" font-size="11" fill="#72243E">+ execute(Menu*, int) : bool</text>
+    <text x="950" y="835" font-family="monospace" font-size="11" fill="#72243E">+ exitMenu(int) : bool</text>
+    <rect x="940" y="600" width="260" height="260" rx="6" fill="none" stroke="#993556" stroke-width="1.5"/>
+  </g>
+
+  <!-- ===== CLASS: MenuAction<T> ===== -->
+  <g id="MenuAction">
+    <rect x="1220" y="320" width="160" height="36" rx="6" ry="0" fill="#CECBF6" stroke="#7F77DD" stroke-width="1"/>
+    <text x="1300" y="343" text-anchor="middle" font-family="Georgia, serif" font-size="12" font-weight="700" fill="#26215C">MenuAction&lt;T&gt;</text>
+    <rect x="1220" y="356" width="160" height="22" fill="#EEEDFE" stroke="#7F77DD" stroke-width="1"/>
+    <text x="1230" y="371" font-family="monospace" font-size="10" fill="#3C3489">- actionFct_ : ActionPtr</text>
+    <rect x="1220" y="378" width="160" height="52" fill="#F5F4FE" stroke="#7F77DD" stroke-width="1"/>
+    <text x="1230" y="393" font-family="monospace" font-size="10" fill="#3C3489">typedef bool (T::*ActionPtr)(int)</text>
+    <text x="1230" y="408" font-family="monospace" font-size="10" fill="#3C3489">+ MenuAction(string, ActionPtr)</text>
+    <text x="1230" y="423" font-family="monospace" font-size="10" fill="#3C3489">+ isValid() : bool</text>
+    <text x="1230" y="438" font-family="monospace" font-size="10" fill="#3C3489">+ execute(Menu*, int) : bool</text>
+    <rect x="1220" y="320" width="160" height="110" rx="6" fill="none" stroke="#7F77DD" stroke-width="1.5"/>
+  </g>
+
+  <!-- ============ RELATIONS ============ -->
+
+  <!-- Instruction → Avancer (inheritance) -->
+  <line x1="580" y1="236" x2="295" y2="320" stroke="#5F5E5A" stroke-width="1.5" stroke-dasharray="none" marker-end="url(#inherit-end)"/>
+
+  <!-- Instruction → Tourner (inheritance) -->
+  <line x1="640" y1="236" x2="640" y2="320" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#inherit-end)"/>
+
+  <!-- Instruction → Repete (inheritance) -->
+  <line x1="700" y1="236" x2="1000" y2="320" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#inherit-end)"/>
+
+  <!-- MenuOption → Menu (inheritance) -->
+  <line x1="1080" y1="208" x2="1080" y2="600" stroke="#5F5E5A" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#inherit-end)"/>
+
+  <!-- MenuOption → MenuAction (inheritance) -->
+  <line x1="1200" y1="130" x2="1300" y2="320" stroke="#5F5E5A" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#inherit-end)"/>
+
+  <!-- Consigne → SvgDrawer (uses, dashed arrow) -->
+  <line x1="660" y1="700" x2="350" y2="700" stroke="#185FA5" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#arrow)"/>
+  <text x="500" y="690" text-anchor="middle" font-family="monospace" font-size="10" fill="#185FA5">uses</text>
+
+  <!-- Consigne → Instruction (stores) -->
+  <line x1="785" y1="600" x2="785" y2="520" stroke="#993C1D" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#arrow)"/>
+  <line x1="785" y1="520" x2="640" y2="236" stroke="#993C1D" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#arrow)"/>
+  <text x="820" y="510" font-family="monospace" font-size="10" fill="#993C1D">stores/uses</text>
+
+  <!-- SvgDrawer → Turtle (owns) -->
+  <line x1="350" y1="740" x2="390" y2="740" stroke="#854F0B" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <text x="368" y="730" text-anchor="middle" font-family="monospace" font-size="10" fill="#854F0B">owns</text>
+
+  <!-- Turtle → Point (contains) -->
+  <line x1="510" y1="878" x2="510" y2="920" stroke="#854F0B" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <text x="525" y="905" font-family="monospace" font-size="10" fill="#854F0B">contains</text>
+
+  <!-- Menu → MenuOption (contains) -->
+  <line x1="1200" y1="680" x2="1200" y2="300" stroke="#993556" stroke-width="1.2" stroke-dasharray="none" marker-end="url(#arrow)"/>
+  <line x1="1200" y1="300" x2="1200" y2="208" stroke="#993556" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <text x="1212" y="450" font-family="monospace" font-size="10" fill="#993556">contains</text>
+
+  <!-- Menu → SvgDrawer (uses) -->
+  <line x1="940" y1="730" x2="650" y2="730" stroke="#185FA5" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#arrow)"/>
+  <text x="795" y="748" text-anchor="middle" font-family="monospace" font-size="10" fill="#185FA5">uses</text>
+
+  <!-- Menu → Consigne (uses) -->
+  <line x1="940" y1="760" x2="910" y2="760" stroke="#993C1D" stroke-width="1.2" stroke-dasharray="6,3"/>
+  <line x1="910" y1="760" x2="910" y2="800" stroke="#993C1D" stroke-width="1.2" stroke-dasharray="6,3"/>
+  <line x1="910" y1="800" x2="910" y2="760" stroke="none"/>
+  <line x1="910" y1="760" x2="910" y2="785" stroke="#993C1D" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#arrow)"/>
+  <line x1="940" y1="785" x2="910" y2="785" stroke="#993C1D" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#arrow)"/>
+
+  <!-- Repete → Instruction (contains) -->
+  <line x1="1000" y1="522" x2="1000" y2="560" stroke="#0F6E56" stroke-width="1.2" stroke-dasharray="6,3"/>
+  <line x1="1000" y1="560" x2="750" y2="560" stroke="#0F6E56" stroke-width="1.2" stroke-dasharray="6,3"/>
+  <line x1="750" y1="560" x2="750" y2="236" stroke="#0F6E56" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#arrow)"/>
+  <text x="870" y="555" text-anchor="middle" font-family="monospace" font-size="10" fill="#0F6E56">contains</text>
+
+  <!-- ===== LEGEND ===== -->
+  <rect x="60" y="950" width="300" height="120" rx="8" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1"/>
+  <text x="210" y="970" text-anchor="middle" font-family="Georgia, serif" font-size="12" font-weight="700" fill="#2C2C2A">Légende</text>
+  <line x1="80" y1="990" x2="140" y2="990" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#inherit-end)"/>
+  <text x="150" y="994" font-family="monospace" font-size="11" fill="#444441">Héritage (solide)</text>
+  <line x1="80" y1="1012" x2="140" y2="1012" stroke="#5F5E5A" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#inherit-end)"/>
+  <text x="150" y="1016" font-family="monospace" font-size="11" fill="#444441">Héritage (virtuel)</text>
+  <line x1="80" y1="1034" x2="140" y2="1034" stroke="#5F5E5A" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#arrow)"/>
+  <text x="150" y="1038" font-family="monospace" font-size="11" fill="#444441">Dépendance / uses</text>
+  <line x1="80" y1="1056" x2="140" y2="1056" stroke="#5F5E5A" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <text x="150" y="1060" font-family="monospace" font-size="11" fill="#444441">Association / owns</text>
+
+</svg>

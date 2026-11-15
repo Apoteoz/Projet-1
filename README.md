@@ -21,6 +21,7 @@ Pour dessiner un carré :
 
 ## Compilation et exécution
 
+    cd Code\ source/
     make
     ./main.exe
 

@@ -24,6 +24,8 @@ Pour dessiner un carré :
     cd Code\ source/
     make
     ./main.exe
+    
+Ouvrir le fichier "draw.html" placé dans le dossier "Code Source" et le rafraîchir à chaque commande.
 
 ## Organisation du code
 
